@@ -1,8 +1,7 @@
 body {
-    background: rgb(201, 204, 204);
-    color: rgb(6, 45, 68);
-    padding: 10px;
-    font-family: Arial, sans-serif;
+    background-image: url(https://learn.g2.com/hs-fs/hubfs/plan%20gif%20marketing%20strategy.gif?width=500&name=plan%20gif%20marketing%20strategy.gif);
+  background-position: center;
+  overflow: hidden;
 }
 
 #all-contents {
@@ -49,10 +48,11 @@ a {
 
 /* main container area beneath menu */
 main {
-    background: rgb(224, 218, 215);
+    background: #ea9999;
     display: flex;
     margin-top: 20px;
     border-radius: 20px;
+    border: 5px solid #8f8ad3;
 }
 
 .sidebar {
@@ -69,7 +69,8 @@ main {
 .content {
     flex: 1;
     padding: 15px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(6, 45, 68);
 }
 
 /* interests section styles */
@@ -78,6 +79,7 @@ main {
     padding: 8px;
     margin-top: 20px;
     border-radius: 20px;
+    color:rgb(6, 45, 68);
 }
 
 h2, h3 {
