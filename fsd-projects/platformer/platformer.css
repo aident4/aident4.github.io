@@ -1,14 +1,19 @@
 body {
+  background-color: red;
   margin: 0px;
-  background-image: url(https://i.ytimg.com/vi/082gNuEVns0/maxresdefault.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: red
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 canvas {
+  background-image: url(https://i.ytimg.com/vi/082gNuEVns0/maxresdefault.jpg);
   margin: 20px;
   object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 img {
