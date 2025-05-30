@@ -370,7 +370,7 @@ function deathOfPlayer() {
     canvas.width / 2,
     canvas.height / 2
   );
-  ctx.fillStyle = "pink";
+  ctx.fillStyle = "red";
   ctx.font = "104% serif";
   ctx.fillText(
     "You are a dissapointment and no wonder your father will not tell you I love you so get off my game loser",

@@ -18,7 +18,7 @@ $(function () {
 
     // Create walls - do not delete or modify this code
     createPlatform(-50, -50, canvas.width + 100, 50); // top wall
-    createPlatform(-50, canvas.height - 10, canvas.width + 100, 200, "navy"); // bottom wall
+    createPlatform(-50, canvas.height - 10, canvas.width + 100, 200, "red"); // bottom wall
     createPlatform(-50, -50, 50, canvas.height + 500); // left wall
     createPlatform(canvas.width, -50, 50, canvas.height + 100); // right wall
 
@@ -27,24 +27,25 @@ $(function () {
     //////////////////////////////////
 
     // TODO 1 - Enable the Grid
-    toggleGrid();
+    // toggleGrid();
 
 
     // TODO 2 - Create Platforms
-    createPlatform(100, 700, 100, 10, "black");
-    createPlatform(600, 598, 100, 10, "black");
-    createPlatform(300, 500, 100, 10, "black");
-    createPlatform(600, 400, 100, 10, "black");
-    createPlatform(800, 300, 100, 10, "black");
-    createPlatform(1100, 200, 100, 10, "black");
-    createPlatform(1300, 400, 100, 10, "black");
+    createPlatform(100, 700, 100, 10, "red");
+    createPlatform(600, 598, 100, 10, "red");
+    createPlatform(300, 500, 100, 10, "red");
+    createPlatform(600, 400, 100, 10, "red");
+    createPlatform(800, 300, 100, 10, "red");
+    createPlatform(1100, 200, 100, 10, "red");
+    createPlatform(1300, 400, 100, 10, "red");
+    createPlatform(0, 200, 100, 10, "red")
 
 
     // TODO 3 - Create Collectables
-    createCollectable("oreo", 300, 400, 0, 0);
-    createCollectable("oreo", 800, 200, 0, 0);
+    createCollectable("oreo", 325, 450, 0, 0);
+    createCollectable("oreo", 825, 250, 0, 0);
     createCollectable("oreo", 1300, 700, 0, 0);
-    createCollectable("oreo", 1350, 300, 0, 0);
+    createCollectable("oreo", 1325, 350, 0, 0);
 
 
     

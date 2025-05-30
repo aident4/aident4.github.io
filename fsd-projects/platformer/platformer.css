@@ -1,10 +1,14 @@
 body {
   margin: 0px;
+  background-image: url(https://i.ytimg.com/vi/082gNuEVns0/maxresdefault.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: red
 }
 
 canvas {
-  background-color: rgb(228, 164, 164);
   margin: 20px;
+  object-fit: cover;
 }
 
 img {
