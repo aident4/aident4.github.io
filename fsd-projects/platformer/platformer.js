@@ -38,7 +38,13 @@ $(function () {
     createPlatform(800, 300, 100, 10, "red");
     createPlatform(1100, 200, 100, 10, "red");
     createPlatform(1300, 400, 100, 10, "red");
-    createPlatform(0, 200, 100, 10, "red")
+    createPlatform(0, 200, 100, 10, "red");
+    createPlatform(250, 100, 10, 100, "red");
+    createPlatform(250, 200, 100, 10, "red");
+    createPlatform(250, 84, 10, 16, "red");
+    createPlatform(350, 100, 10, 110, "red");
+    createPlatform(350, 0, 10, 110, "red");
+    createPlatform(250, 200, 10, 100, "red");
 
 
     // TODO 3 - Create Collectables
@@ -46,7 +52,7 @@ $(function () {
     createCollectable("oreo", 825, 250, 0, 0);
     createCollectable("oreo", 1300, 700, 0, 0);
     createCollectable("oreo", 1325, 350, 0, 0);
-
+    createCollectable("oreo", 280, 150, 0, 0);
 
     
     // TODO 4 - Create Cannons
