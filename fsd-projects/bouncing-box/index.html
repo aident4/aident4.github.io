@@ -84,7 +84,7 @@
 			var positionY = 0;
 			var boardHeight = jQuery(window).height();
 			var randNumX;
-			var ranNumY;
+			var randNumY;
 
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -95,16 +95,16 @@
 				positionX += speed;
 				positionY += speedY;
 				moveBoxTo(positionX, positionY);
-				if (positionX > boardWidth){
+				if (positionX > boardWidth - 70){
 					speed = -speed;
 				} else if (positionX < 0){
 					speed = -speed;
 				} 
 				
-				if (positionY > boardHeight){
-					speedY -= speedY;
+				if (positionY > boardHeight - 70){
+					speedY = -speedY;
 				} else if (positionY < 0){
-					speedY -= speedY;
+					speedY = -speedY;
 				}
 			};
 
@@ -115,15 +115,17 @@
 			*/
 			function handleBoxClick() {
 				//resets box to start position
-				positionX = 0;
-				positionY = 0;
+				randNumX = Math.random() * boardWidth;
+				positionX = randNumX;
+				randNumY = Math.random() * boardHeight;
+				positionY = randNumY;
 				//score increases
 				points++;
 				changeBoxText(points);
 				//increase speed
 				speed = 3 * points + 10;
 				speedY = 3 * points + 10;
-
+				
 
 			};
 
