@@ -30,6 +30,8 @@ var background = function (window) {
         //////////////////////////////////////////////////////////////////
         // TODO (several):
         var tree;
+        var tree2;
+        var tree3;
         var buildings = [];
       
         // called at the start of game and whenever the page is resized
@@ -40,11 +42,17 @@ var background = function (window) {
             // TODO 1:
             // this currently fills the background with an obnoxious yellow;
             // you should modify both the height and color to suit your game
-            var backgroundFill = draw.rect(canvasWidth,canvasHeight,'black');
-            background.addChild(backgroundFill);
-            
+            var backgroundImage = new Image();
+                backgroundImage.src = "img/trackBackground.png";
+                backgroundImage.onload = function() {
+                var backgroundFill = new createjs.Bitmap(backgroundImage);              
+                backgroundFill.scaleX = app.canvas.width / backgroundImage.width;
+                backgroundFill.scaleY = groundY / backgroundImage.height;
+                background.addChildAt(backgroundFill, 0);
+            };    
+
             // TODO 2: - Add a moon and starfield
-            var moon = draw.bitmap("img/moon.png");
+            /*var moon = draw.bitmap("img/moon.png");
             moon.x = canvasWidth-400;
             moon.y = canvasHeight-800;
             moon.scaleX = 1;
@@ -58,10 +66,10 @@ var background = function (window) {
                 background.addChild(circle);
             }
 
-            
+            */
             
             // TODO 4: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
-            for (var i = 0; i < 5; ++i) {
+            /*for (var i = 0; i < 5; ++i) {
                 var buildingColors = ["lightblue", "white", "green", "orange", "red"];
                 var buildingHeight = 500 * Math.random();
                 var building = draw.rect(75, buildingHeight, buildingColors[i], "Black", 1);
@@ -69,13 +77,23 @@ var background = function (window) {
                 building.y = groundY - buildingHeight;
                 background.addChild(building);
                 buildings.push(building);
-}
+}*/
             
             // TODO 3: Part 1 - Add a tree
-            tree = draw.bitmap("img/tree.png");
+            tree = draw.bitmap("img/ncaaChamps.png");
             tree.x = 300;
-            tree.y = groundY - 225;
+            tree.y = groundY - 800;
             background.addChild(tree)
+
+            tree2 = draw.bitmap("img/Orings.png");
+            tree2.x = 1000;
+            tree2.y = groundY - 800;
+            background.addChild(tree2)
+
+            tree3 = draw.bitmap("img/worldAthletics.png");
+            tree3.x = 1700;
+            tree3.y = groundY - 800;
+            background.addChild(tree3)
             
         } // end of render function - DO NOT DELETE
         
@@ -92,6 +110,16 @@ var background = function (window) {
             tree.x -= 5
             if (tree.x < -200){
                 tree.x = canvasWidth;
+            }
+
+            tree2.x -= 5
+            if (tree2.x < -200){
+                tree2.x = canvasWidth;
+            }
+
+            tree3.x -= 5
+            if (tree3.x < -200){
+                tree3.x = canvasWidth;
             }
             
             // TODO 4: Part 2 - Parallax

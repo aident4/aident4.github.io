@@ -15,9 +15,18 @@ var makeLevelData = function (window) {
         number: 1,
         speed: -3,
         gameItems: [
-          { type: "sawblade", x: 400, y: groundY },
-          { type: "sawblade", x: 600, y: groundY },
-          { type: "sawblade", x: 900, y: groundY },
+          { type: "sawblade", x: 400, y: groundY - 125, damage: 25, scale: 0.15},
+          { type: "sawblade", x: 700, y: groundY - 125, damage: 25, scale: 0.15},
+          { type: "sawblade", x: 1000, y: groundY - 125, damage: 25, scale: 0.15},
+          { type: "sawblade", x: 1300, y: groundY - 125, damage: 25, scale: 0.15},
+          { type: "enemy", x: 550, y: groundY - 50, speed: -2, image: "img/JoshKerr.png", offsetX: -90, offsetY: -50, scale: 0.25},
+          { type: "enemy", x: 850, y: groundY - 50, speed: -2, image: "img/JoshKerr.png", offsetX: -90, offsetY: -50, scale: 0.25},
+          { type: "enemy", x: 1150, y: groundY - 50, speed: -2, image: "img/JoshKerr.png", offsetX: -90, offsetY: -50, scale: 0.25},
+          { type: "enemy", x: 1450, y: groundY - 50, speed: -2, image: "img/JoshKerr.png", offsetX: -90, offsetY: -50, scale: 0.25},
+          { type: "reward", x: 550, y: groundY -100, speed: -2, image: "img/GoldMedal.png", offsetX: -45, offsetY: -35, scale: 0.05},
+          { type: "reward", x: 850, y: groundY -100, speed: -2, image: "img/GoldMedal.png", offsetX: -45, offsetY: -35, scale: 0.05},
+          { type: "reward", x: 1150, y: groundY -100, speed: -2, image: "img/GoldMedal.png", offsetX: -45, offsetY: -35, scale: 0.05},
+          { type: "marker", x: 1600, y: groundY - 75, speed: -2, image: "img/tracktrack.png", offsetX: -60, offsetY: -30, scale: 0.5}
         ],
       },
       {

@@ -31,16 +31,17 @@ var init = function (window) {
   var background = opspark.makeBackground(app, ground);
   view.addChild(background);
 
-  var help = draw.textfield(
+  /*var help = draw.textfield(
     "MOVES || up: jump | right: flying jump | down: duck | space: fire | q self destruct!",
     "20px Arial",
     "#ccc",
     "left"
   );
+  
   help.x = 10;
   help.y = ground.y + ground.getBounds().height + 10;
-  view.addChild(help);
-
+  view.addChild(help);*/
+  
   window.opspark.makeSpriteSheet(data).then(function (ss) {
     spritesheet = ss;
     halle = window.opspark.makeHalle(

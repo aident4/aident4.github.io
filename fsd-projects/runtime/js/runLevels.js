@@ -20,7 +20,7 @@ var runLevels = function (window) {
     // BEGIN EDITING YOUR CODE HERE
     
 
-    function createSawBlade (x, y, damage){
+    function createSawBlade (x, y, damage, scale){
       var hitZoneSize = 25;
       var damageFromObstacle = damage;
       var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
@@ -28,18 +28,22 @@ var runLevels = function (window) {
       sawBladeHitZone.y = y;
       sawBladeHitZone.rotationalVelocity = 30;
       game.addGameItem(sawBladeHitZone);
-      var obstacleImage = draw.bitmap("img/sawblade.png");
+      var obstacleImage = draw.bitmap("img/spikes.png");
       obstacleImage.x = -25;
-      obstacleImage.y = -25
+      obstacleImage.y = -25;
+      obstacleImage.scaleX = scale;
+      obstacleImage.scaleY = scale;
       sawBladeHitZone.addChild(obstacleImage);
     }
     
 
-    function createEnemy(x, y, speed){
+    function createEnemy(x, y, speed, image, offsetX, offsetY, scale){
       var enemy = game.createGameItem("enemy", 25);
-      var redSquare = draw.rect(50, 50, "red");
-      redSquare.x = -25;
-      redSquare.y = -25;
+      var redSquare = draw.bitmap("img/JoshKerr.png");
+      redSquare.x = offsetX;
+      redSquare.y = offsetY;
+      redSquare.scaleX = scale;
+      redSquare.scaleY = scale;
       enemy.addChild(redSquare);
       enemy.x = x;
       enemy.y = y;
@@ -56,30 +60,33 @@ var runLevels = function (window) {
       }
     }
 
-    function createReward(x, y, speed){
+    function createReward(x, y, speed, image, offsetX, offsetY, scale){
       var reward = game.createGameItem("reward", 25);
-      var blueSquare = draw.rect(50, 50, "blue");
-      blueSquare.x = -25;
-      blueSquare.y = -25;
+      var blueSquare = draw.bitmap("img/GoldMedal.png");
+      blueSquare.x = offsetX;
+      blueSquare.y = offsetY;
+      blueSquare.scaleX = scale;
+      blueSquare.scaleY = scale;
       reward.addChild(blueSquare);
       reward.x = x;
       reward.y = y;
       game.addGameItem(reward);
       reward.velocityX = speed;
       reward.onPlayerCollision = function(){
+        game.changeIntegrity(5);
         game.increaseScore(100);
-        game.changeIntegrity(-10);
         reward.fadeOut();
-        startLevel();
       };
     }
 
 
-    function createMarker(x, y, speed){
+    function createMarker(x, y, speed, image, offsetX, offsetY, scale){
       var marker = game.createGameItem("marker", 25);
-      var yellowSquare = draw.rect(50, 50, "yellow");
-      yellowSquare.x = -25;
-      yellowSquare.y = -25;
+      var yellowSquare = draw.bitmap("img/steeple.png");
+      yellowSquare.x = offsetX;
+      yellowSquare.y = offsetY;
+      yellowSquare.scaleX = scale;
+      yellowSquare.scaleY = scale;
       marker.addChild(yellowSquare);
       marker.x = x;
       marker.y = y;
@@ -87,27 +94,38 @@ var runLevels = function (window) {
       marker.velocityX = speed;
       marker.onPlayerCollision = function(){
         game.increaseScore(100);
-        game.changeIntegrity(-10);
         marker.fadeOut();
         startLevel();
       };
     }
 
-
-    createSawBlade(400, groundY - 125, 10);
-    createSawBlade(600, groundY - 125, 10);
-    createSawBlade(800, groundY - 125, 10);
-    createEnemy(400, groundY - 50, -2);
-    createEnemy(600, groundY - 50, -2);
-    createEnemy(800, groundY - 50, -2);
-    createEnemy(1000, groundY - 50, -2);
-    createReward(1200, groundY - 50, -2)
-    createMarker(1500, groundY - 50, -2)
+    //function calls
+   
 
     function startLevel() {
       // TODO 13 goes below here
+      var level = levelData[currentLevel];
+      var levelObjects = level.gameItems;
+      for (var i = 0; i < levelObjects.length; i++){
+        var element = levelObjects[i];
 
+        if(element.type === "sawblade"){
+          createSawBlade(element.x, element.y, element.damage, element.scale);
+        }
 
+        if (element.type === "enemy"){
+          createEnemy(element.x, element.y, element.speed, element.image, element.offsetX, element.offsetY, element.scale);
+        }
+
+        if(element.type === "reward"){
+          createReward(element.x, element.y, element.speed, element.image, element.offsetX, element.offsetY, element.scale);
+        }
+
+        if(element.type === "marker"){
+          createMarker(element.x, element.y, element.speed, element.image, element.offsetX, element.offsetY, element.scale);
+        }
+
+      };
 
       //////////////////////////////////////////////
       // DO NOT EDIT CODE BELOW HERE
