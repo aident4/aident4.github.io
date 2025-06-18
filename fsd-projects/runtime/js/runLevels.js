@@ -20,7 +20,7 @@ var runLevels = function (window) {
     // BEGIN EDITING YOUR CODE HERE
     
 
-    function createSawBlade (x, y, damage, scale){
+    function createSawBlade (x, y, damage, image, scale){
       var hitZoneSize = 25;
       var damageFromObstacle = damage;
       var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
@@ -28,7 +28,7 @@ var runLevels = function (window) {
       sawBladeHitZone.y = y;
       sawBladeHitZone.rotationalVelocity = 30;
       game.addGameItem(sawBladeHitZone);
-      var obstacleImage = draw.bitmap("img/spikes.png");
+      var obstacleImage = draw.bitmap(image);
       obstacleImage.x = -25;
       obstacleImage.y = -25;
       obstacleImage.scaleX = scale;
@@ -39,7 +39,7 @@ var runLevels = function (window) {
 
     function createEnemy(x, y, speed, image, offsetX, offsetY, scale){
       var enemy = game.createGameItem("enemy", 25);
-      var redSquare = draw.bitmap("img/JoshKerr.png");
+      var redSquare = draw.bitmap(image);
       redSquare.x = offsetX;
       redSquare.y = offsetY;
       redSquare.scaleX = scale;
@@ -62,7 +62,7 @@ var runLevels = function (window) {
 
     function createReward(x, y, speed, image, offsetX, offsetY, scale){
       var reward = game.createGameItem("reward", 25);
-      var blueSquare = draw.bitmap("img/GoldMedal.png");
+      var blueSquare = draw.bitmap(image);
       blueSquare.x = offsetX;
       blueSquare.y = offsetY;
       blueSquare.scaleX = scale;
@@ -110,7 +110,7 @@ var runLevels = function (window) {
         var element = levelObjects[i];
 
         if(element.type === "sawblade"){
-          createSawBlade(element.x, element.y, element.damage, element.scale);
+          createSawBlade(element.x, element.y, element.damage, element.image, element.scale);
         }
 
         if (element.type === "enemy"){
