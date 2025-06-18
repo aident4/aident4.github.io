@@ -26,7 +26,7 @@ var makeLevelData = function (window) {
           { type: "reward", x: 550, y: groundY -100, speed: -2, image: "img/GoldMedal.png", offsetX: -45, offsetY: -35, scale: 0.05},
           { type: "reward", x: 850, y: groundY -100, speed: -2, image: "img/GoldMedal.png", offsetX: -45, offsetY: -35, scale: 0.05},
           { type: "reward", x: 1150, y: groundY -100, speed: -2, image: "img/GoldMedal.png", offsetX: -45, offsetY: -35, scale: 0.05},
-          { type: "marker", x: 1600, y: groundY - 75, speed: -2, image: "img/tracktrack.png", offsetX: -60, offsetY: -30, scale: 0.5}
+          { type: "marker", x: 1600, y: groundY - 75, speed: -2, image: "img/steeple.png", offsetX: -60, offsetY: -30, scale: 0.5}
         ],
       },
       {
@@ -45,7 +45,7 @@ var makeLevelData = function (window) {
           { type: "reward", x: 550, y: groundY -100, speed: -2, image: "img/medal2.png", offsetX: -25, offsetY: -50, scale: 0.1},
           { type: "reward", x: 850, y: groundY -100, speed: -2, image: "img/medal2.png", offsetX: -25, offsetY: -50, scale: 0.1},
           { type: "reward", x: 1150, y: groundY -100, speed: -2, image: "img/medal2.png", offsetX: -25, offsetY: -50, scale: 0.1},
-          { type: "marker", x: 1600, y: groundY - 75, speed: -2, image: "img/tracktrack.png", offsetX: -60, offsetY: -30, scale: 0.5}
+          { type: "marker", x: 1600, y: groundY - 75, speed: -2, image: "img/finish.png", offsetX: -60, offsetY: -30, scale: 0.5}
         ],
       },
     ];
